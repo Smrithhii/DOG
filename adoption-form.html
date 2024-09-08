@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2a9d8f;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        select, input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .hidden {
+            display: none;
+        }
+        #adoptSection:checked ~ .adopt {
+            display: block;
+        }
+        #giveAwaySection:checked ~ .giveAway {
+            display: block;
+        }
+        button {
+            background-color: #2a9d8f;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #1d6f60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pet Adoption Form</h1>
+        <form>
+            <label for="ownerName">Name of Owner:</label>
+            <input type="text" id="ownerName" name="ownerName" required>
+
+            <label for="action">Wish to:</label>
+            <input type="radio" id="adoptSection" name="action" value="adopt">
+            <label for="adoptSection">Adopt a Pet</label>
+            <input type="radio" id="giveAwaySection" name="action" value="give">
+            <label for="giveAwaySection">Give Away a Pet</label>
+
+            <div class="adopt hidden">
+                <label for="petTypeAdopt">What pet:</label>
+                <select id="petTypeAdopt" name="petTypeAdopt">
+                    <option value="male dog">Male Dog</option>
+                    <option value="female dog">Female Dog</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="giveAway hidden">
+                <label for="petTypeGive">Dog Breed:</label>
+                <select id="petTypeGive" name="petTypeGive">
+                    <option value="gsd">GSD</option>
+                    <option value="golden">Golden Retriever</option>
+                    <option value="jrt">jack Russel Terrier</option>
+                    <option value="lab">Labrador</option>
+                    <option value="husky">Husky</option>
+                    <option value="raja">Rajapalayam</option>
+                    <option value="chipi">Chippiparai</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="reason">Reason for giving away:</label>
+                <select id="reason" name="reason">
+                    <option value="family">Family Reasons</option>
+                    <option value="move">Moving</option>
+                    <option value="allergies">Allergies</option>
+                    <option value="old">Old Age</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="petAge">How old is the pet:</label>
+                <input type="text" id="petAge" name="petAge">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
